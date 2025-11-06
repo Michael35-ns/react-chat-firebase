@@ -10,9 +10,10 @@ const AuthLayout = () => {
     return <Navigate to="/admin" replace />;
   }
   return (
-    <div>
-      <Outlet />
-      login layout
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+      <div className="max-w-md w-full">
+        <Outlet />
+      </div>
     </div>
   );
 };
