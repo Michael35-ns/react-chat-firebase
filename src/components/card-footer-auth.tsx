@@ -29,6 +29,7 @@ const CardFooterAuth = ({ type, isLoading }: Props) => {
         <Button
           onClick={handleLoginWithGoogle}
           className="w-full cursor-pointer"
+          variant="outline"
           disabled={isLoading}>
           <Mail className="mr-2" />
           {isLogin ? "Log in with google" : "Register with Google"}
@@ -36,7 +37,7 @@ const CardFooterAuth = ({ type, isLoading }: Props) => {
         <p className="text-center text-sm text-muted-foreground">
           {isLogin ? "Don´t have an account? " : "Already have an account? "}
           <Link to={isLogin ? "/auth/register" : "/auth/login"}>
-            <Button variant="link" className="p-0 h-auto font-normal">
+            <Button variant="link" className="p-0 h-auto font-normal cursor-pointer">
               {isLogin ? "Register" : "Sign in"}
             </Button>
           </Link>{" "}

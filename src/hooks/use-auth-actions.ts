@@ -17,7 +17,9 @@ interface AuthActionResponse {
 
 export const useAuthActions = () => {
   const [isLoading, setIsLoading] = useState(false);
+
   const auth = useAuth();
+
   const login = async (data: {
     email: string;
     password: string;
@@ -57,6 +59,8 @@ export const useAuthActions = () => {
         await updateProfile(currentUser.user, {
           displayName: data.displayName,
         });
+
+        await currentUser.user.reload();
       }
 
       return {

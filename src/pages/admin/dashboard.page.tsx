@@ -3,14 +3,13 @@ import { useAuthActions } from "@/hooks/use-auth-actions";
 import { useUser } from "reactfire";
 
 const DashboardPage = () => {
-
   const { data: user } = useUser();
   const { logout } = useAuthActions();
   return (
-    <div className="container mx-auto p-4">
+    <div>
       <h1>Dashboard Page</h1>
-      <p>Welcome, {user?.displayName || "gueste"}</p>
-      <p>Email: {user?.email || "Not Provided"}</p>
+      <p>Welcome, {user!.displayName || "gueste"}</p>
+      <p>Email: {user!.email || "Not Provided"}</p>
       <Button variant={"destructive"} onClick={logout}>
         Sign out
       </Button>
